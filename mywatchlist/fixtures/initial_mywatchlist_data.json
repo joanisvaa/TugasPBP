@@ -1,0 +1,112 @@
+[
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":1,
+        "fields":{
+            "watched":"Watched",
+            "title":"TOPGUN",
+            "rating": "5",
+            "release_date": "27 Mei 2022",
+            "review": "Film action yang mengajak kamu rasakan sensasi terbang dengan pesawat jet."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":2,
+        "fields":{
+            "watched":"Watched",
+            "title":"Byōsoku 5 Centimeter",
+            "rating": "4",
+            "release_date": "3 Maret 2007",
+            "review": "Film romantis yang realistis dan puitis."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":3,
+        "fields":{
+            "watched":"Watched",
+            "title":"Bullet train",
+            "rating": "4",
+            "release_date": "10 Agustus 2022",
+            "review": "Film action dengan komedi yang menghibur. Terlalu lama sih durasinya."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":4,
+        "fields":{
+            "watched":"Watched",
+            "title":"The Platform",
+            "rating": "3",
+            "release_date": "8 November 2019",
+            "review": "Filmnya bikin mikir banget sih."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":5,
+        "fields":{
+            "watched":"Not Watched Yet",
+            "title":"Mulan",
+            "rating": "3",
+            "release_date": "25 Maret 2020",
+            "review": "Hua Mulan, putri tertua dari seorang pejuang terhormat, memutuskan menggantikan ayahnya yang sakit-sakitan."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":6,
+        "fields":{
+            "watched":"Not Watched Yet",
+            "title":"She's All That",
+            "rating": "5",
+            "release_date": "29 Januari 1999",
+            "review": "Film komedi romansa remaja Amerika Serikat tahun 1999 garapan Robert Iscove."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":7,
+        "fields":{
+            "watched":"Watched",
+            "title":"Pengabdi Setan 2: Communion",
+            "rating": "3",
+            "release_date": "4 Agustus 2022",
+            "review": "Plotnya ga ada dan intinya cuman semuanya mati aja."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":8,
+        "fields":{
+            "watched":"Not Watched Yet",
+            "title":"Marriage story",
+            "rating": "5",
+            "release_date": "15 November 2019",
+            "review": "Film ini bercerita tentang pasangan suami-istri yang menjalani proses perceraian."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":9,
+        "fields":{
+            "watched":"Watched",
+            "title":"Howl's Moving Castle",
+            "rating": "5",
+            "release_date": "20 November 2004",
+            "review": "Howl ganteng banget keren."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":10,
+        "fields":{
+            "watched":"Not Watched Yet",
+            "title":"Jumanji",
+            "rating": "4",
+            "release_date": "4 Desember 2019",
+            "review": "Saat memutuskan masuk lagi ke Jumanji untuk menyelamatkan salah satu dari mereka, mereka menemukan segalanya tak seperti yang diduga."
+        }
+    }
+]

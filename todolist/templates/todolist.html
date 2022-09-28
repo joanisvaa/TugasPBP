@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 style="color:blue;">Hi, {{ request.user.username }}</h1>
+
+<form method="POST" >  
+    {% csrf_token %}  
+    {% if list_task %}
+        <table border="5">
+            <tr>
+            <th>Judul Task</th>
+            <th>Deskripsi Task </th>
+            <th>Tanggal Pembuatan Task</th>
+            
+            </tr>
+            {% comment %} Add the data below this line {% endcomment %}
+            {% for task in list_task %}
+                <tr>
+                    <td>{{task.task_title}}</td>
+                    <td>{{task.task_description}}</td>
+                    <td>{{task.task_date}}</td>
+                </tr>
+            {% endfor %}
+        </table> 
+    {% else %}
+    <h2>Bergabut ria &#128525;</h2>
+
+    {% endif %}
+
+</form>
+
+<button><a href="{% url 'todolist:create_task' %}">Buat Task Baru</a></button>
+<!-- <br/>
+<br/> -->
+<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+
+{% endblock content %}

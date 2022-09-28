@@ -1,0 +1,2 @@
+HEROKU_API_KEY: da01f69f-6eeb-4560-9293-90f1a5d33e6c
+HEROKU_APP_NAME: tugas2pbp-joan
