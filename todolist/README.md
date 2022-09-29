@@ -5,10 +5,18 @@ PBP E
 # Tugas 4 PBP
 Link app: 
 https://tugas2pbp-joan.herokuapp.com/todolist/
+
 https://tugas2pbp-joan.herokuapp.com/todolist/login
+
 https://tugas2pbp-joan.herokuapp.com/todolist/register
+
 https://tugas2pbp-joan.herokuapp.com/todolist/logout
+
 https://tugas2pbp-joan.herokuapp.com/todolist/create-task
+
+User dummy:
+1. Username: user1, Pass: pengguna1
+2. Username: user2, Pass: pengguna2
 
 1. Apa kegunaan {% csrf_token %} pada elemen <form>? Apa yang terjadi apabila tidak ada potongan kode tersebut pada elemen <form>?
 
