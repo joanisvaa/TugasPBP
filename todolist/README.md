@@ -3,66 +3,173 @@ Joan Isva Shanti Andrea
 PBP E
 # Tugas 5 PBP
 1. Apa perbedaan dari Inline, Internal, dan External CSS? Apa saja kelebihan dan kekurangan dari masing-masing style?
-- Inline CSS: kode CSS yang dituliskan secara langsung didalam atribut elemen HTML yang sepsifik.
-Contoh:
-```
-<h1 style="color:blue; font-family: arial;">Loginr</h1>
-```
-Kelebihan dari inline CSS adalah dapat sangat bermanfaat saat kita hanya ingin melakukan styling pada salah satu elemen saja dan kita tidak perlu membuat file CSS ataupun mengakses file CSS yang terpisah. Selain itu, inline CSS lebih mudah untuk dilakukan sehingga cocok saat ingin melakukan percobaan atau memperbaiki kesalahan-kesalahan kecil.
 
-Kekurangan dari inline CSS adalah mengonsumsi banyak waktu dikarenakan kita harus melakukan styling pada setiap elemen HTML. Selain itu, melakukan styling pada setiaqp elemen dapat mempengaruhi ukuran halaman dan meningkatkan waktu download. 
+- Inline CSS: kode CSS yang dituliskan secara langsung didalam atribut elemen HTML yang sepsifik.
+    Contoh:
+    ```
+    <h1 style="color:blue; font-family: arial;">Loginr</h1>
+    ```
+    
+    Kelebihan dari inline CSS adalah dapat sangat bermanfaat saat kita hanya ingin melakukan styling pada salah satu elemen saja dan kita tidak perlu   membuat file CSS ataupun mengakses file CSS yang terpisah. Selain itu, inline CSS lebih mudah untuk dilakukan sehingga cocok saat ingin melakukan percobaan atau memperbaiki kesalahan-kesalahan kecil.
+
+    Kekurangan dari inline CSS adalah mengonsumsi banyak waktu dikarenakan kita harus melakukan styling pada setiap elemen HTML. Selain itu, melakukan styling pada setiaqp elemen dapat mempengaruhi ukuran halaman dan meningkatkan waktu download. 
 
 - Internal CSS: kode CSS yang ditulis di dalam tag <style> dan kode HTML dituliskan di bagian atas (header) / <head> file HTML. Internal CSS dapat digunakan untuk membuat tampilan pada satu halaman website dan tidak digunakan pada halaman website yang lain.
-Contoh:
-```
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-body {
-    background-color: blue;
-}
-h1 {
-    color: red;
-    padding: 60px;
-} 
-</style>
-</head>
-<body>
+    Contoh:
+    ```
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <style>
+    body {
+        background-color: blue;
+    }
+    h1 {
+        color: red;
+        padding: 60px;
+    } 
+    </style>
+    </head>
+    <body>
 
-<h1>Contoh Internal CSS</h1>
-<p>Paragraf baru</p>
+    <h1>Contoh Internal CSS</h1>
+    <p>Paragraf baru</p>
 
-</body>
-</html>    
-```
-Kelebihan dari internal CSS adalah kita tidak memerlukan file yang banyak dan juga kita dapat menggunakan class dan id selector di dalam file tersebut.
+    </body>
+    </html>    
+    ```
     
-Kekurangan dari internal CSS adalah tidak efisien saat kita ingin menggunakan CSS yang sama dalam beberapa file.
+    Kelebihan dari internal CSS adalah kita tidak memerlukan file yang banyak dan juga kita dapat menggunakan class dan id selector di dalam file tersebut.
+
+    Kekurangan dari internal CSS adalah tidak efisien saat kita ingin menggunakan CSS yang sama dalam beberapa file.
 
 - External CSS: kode CSS yang ditulis terpisah dengan kode HTML Eksternal CSS ditulis di sebuah file khusus yang berekstensi .css. 
-Contoh file .css:
-```
-.xleftcol {
-   float: left;
-   width: 33%;
-   background:#809900;
-}
-.xmiddlecol {
-   float: left;
-   width: 34%;
-   background:#eff2df;
-}
-```
-Kode tersebut kemudian di letakan di bagian <head> file HTML. 
-Kelebihan dari external CSS adalah proses pembuatan halaman yang lebih cepat dan efisien dikarenakan kita hanya perlu membuat satu file .css yang dapat digunakan berkali-kali. Selain itu, apabila kita ingin melakukan perubahan pada seluruh halaman website maka kita hanya perlu mengubah satu fil .css tersebut saja.
+    Contoh file .css:
+    ```
+    .xleftcol {
+       float: left;
+       width: 33%;
+       background:#809900;
+    }
+    .xmiddlecol {
+       float: left;
+       width: 34%;
+       background:#eff2df;
+    }
+    ```
+   
+    Kode tersebut kemudian di letakan di bagian <head> file HTML. 
+    Kelebihan dari external CSS adalah proses pembuatan halaman yang lebih cepat dan efisien dikarenakan kita hanya perlu membuat satu file .css yang dapat digunakan berkali-kali. Selain itu, apabila kita ingin melakukan perubahan pada seluruh halaman website maka kita hanya perlu mengubah satu fil .css tersebut saja.
 
-Kekurangan dari external CSS adalah apabila proses loading file .css tersebut lama maka website tidak akan ter-render dengan benar. 
+    Kekurangan dari external CSS adalah apabila proses loading file .css tersebut lama maka website tidak akan ter-render dengan benar. 
 
 2. Jelaskan tag HTML5 yang kamu ketahui
-<a> : tag yang digunakan saat ingin membuat elemen hyperlink. 
-<b> : tag yang digunakana saat ingin membuat elemen text dengan style bold.
-<br>
+```
+"<a>" : tag yang digunakan saat ingin membuat elemen hyperlink. 
+"<b>" : tag yang digunakana saat ingin membuat elemen text dengan style bold.
+"<br>" : tag untuk membuat satu baris break.
+"<div>" : tag untuk mendefinisikan sebuah section.
+"<button>" : tag untuk membuat button/tombol yang dapat diklik.
+"<form>" : tag yang mendefinisikan sebuah HTML form untuk input user.
+"<head>" : tag untuk mendefinisikan bagian atas sebuah file HTML yang berisikan informasi mengenai dokumen tersebut seperti judul/title.
+"<header>" : tag yang merepresentasikan bagian header dari sebuah dokumen atau section. 
+"<h1>" - "<h6>" : tag untuk mendefinisikan heading HTML.
+"<html>" : tag untuk mendefinisikan root dari dokumen HTML.
+"<i>" : tag untuk mendefinisikan elemen text dengan style italic.
+"<input>" : tag untuk mendefinisikan input control.
+"<label>" : tag untuk mendefinisikan label untuk tag "<input>"
+"<p>" : tag untuk mendefinisikan sebuah paragraf.
+"<style>" : tag untuk mendefinisikan informasi mengenai style dari sebuah elemen.
+"<table>" : tag untuk mendefiniskan sebuah tabel.
+```
+
+3. Jelaskan tipe-tipe CSS selector yang kamu ketahui
+  
+- Selector Tag
+    Selector tag atau type akan memilih elemen berdasarkan nama tag sebuah elemen. 
+    Contoh:
+    ```
+    p {
+    color: blue;
+    }
+    ```
+    
+    Maka, selector akan menargetkan semua tag <p> yang ada pada file HTML dan mengubah elemen tersebut menjadi berwarna biru.
+- Selector Class
+    Selector yang akan memilih elemen berdasarkan nama class yang diberikan. 
+    Contoh:
+    ```
+    Contoh:
+    .blue {
+      color: white;
+      background: blue;
+      padding: 5px;
+    }
+    ```
+    
+    Maka, selector akan menargetkan semua elemen dengan atribut class "blue". 
+    Contoh:
+    ```
+    <b class="blue">CSS</b>
+    
+    ```
+    
+    Contoh tersebut akan menghasilkan penulisan CSS dalam style bold dengan warna, background, dan padding yang telah didefinikan pada selector class .blue. Jumlah selector class yang digunakan dapat lebih dari satu.
+    
+- Selector ID
+    Selector ID adalah sebuah selector yang memiliki sifat yang sama dengan selector class, tetapi selector ID bersifat unik sehingga hanya dapat digunakan pada satu elemen saja. Selector ID ditandakan dengan "#".
+    Contoh:
+    ```
+    #header {
+    background: blue;
+    color: white;
+    height: 50px;
+    padding: 50px;
+    }   
+    ```
+    
+- Selector Atribut
+    Selector atribut adalah selector yang memiliki elemen berdasarkan atribut. Selector atribut memiliki sifat yang hampir sama dengan selector tag.
+    Contoh:
+    ```
+    input[type=text] {
+    background: none;
+    color: cyan;
+    padding: 10px;
+    border: 1px solid cyan;
+    }
+    ```
+    
+    Selector tersebut akan menargetkan semua elemen input yang memiliki atribut "type" text.
+    
+- Selector Universal
+     Selector yang digunakan untuk menargetkan semua elemen pada scope tertentu.
+    Contoh:
+    ```
+    * {
+    border: 1px solid black;
+    }
+    ```
+    
+    Maka, semua elemen akan memiliki border yang solid dengan ukuran 1 px dan berwarna hitam.  
+- Selector Pseudo
+    Selector pseudo adalah selector untuk memilih elemen semu seperti state pada elemen, elemen before dan after, elemen ganjil, dan sebagainya. Terdapat dua jenis selector pseudo, yaitu pseudo class dan pseudo element.
+    - Pseudo Class
+        Pseudo class adalah selector yang menargetkan elemen berdasarkan state/kondisi. State/kondisi ini dapat berupa hover, focus, onclick, active, checked, link, dll.
+        ```
+        a:hover {
+        color: green;
+        }
+        ```
+        
+        Maka, semua elemen dengan tag <a> akan memiliki warna hijau saat sedang keadaan hover.
+    - Pseudo Element
+        Pseudo element CSS dapat digunakan untuk menata bagian tertentu dari suatu elemen. Misalnya, dapat digunakan untuk: Style huruf pertama, atau baris, dari suatu elemen. Contoh selector pseudo elemen dapat berupa ::before, ::after, ::marker, ::placeholder, dll.
+
+4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas
+    
+
+
 
 # Tugas 4 PBP
 Link app: 
