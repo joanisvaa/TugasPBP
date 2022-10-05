@@ -1,6 +1,68 @@
 Joan Isva Shanti Andrea
 2106707712
 PBP E
+# Tugas 5 PBP
+1. Apa perbedaan dari Inline, Internal, dan External CSS? Apa saja kelebihan dan kekurangan dari masing-masing style?
+- Inline CSS: kode CSS yang dituliskan secara langsung didalam atribut elemen HTML yang sepsifik.
+Contoh:
+```
+<h1 style="color:blue; font-family: arial;">Loginr</h1>
+```
+Kelebihan dari inline CSS adalah dapat sangat bermanfaat saat kita hanya ingin melakukan styling pada salah satu elemen saja dan kita tidak perlu membuat file CSS ataupun mengakses file CSS yang terpisah. Selain itu, inline CSS lebih mudah untuk dilakukan sehingga cocok saat ingin melakukan percobaan atau memperbaiki kesalahan-kesalahan kecil.
+
+Kekurangan dari inline CSS adalah mengonsumsi banyak waktu dikarenakan kita harus melakukan styling pada setiap elemen HTML. Selain itu, melakukan styling pada setiaqp elemen dapat mempengaruhi ukuran halaman dan meningkatkan waktu download. 
+
+- Internal CSS: kode CSS yang ditulis di dalam tag <style> dan kode HTML dituliskan di bagian atas (header) / <head> file HTML. Internal CSS dapat digunakan untuk membuat tampilan pada satu halaman website dan tidak digunakan pada halaman website yang lain.
+Contoh:
+```
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-color: blue;
+}
+h1 {
+    color: red;
+    padding: 60px;
+} 
+</style>
+</head>
+<body>
+
+<h1>Contoh Internal CSS</h1>
+<p>Paragraf baru</p>
+
+</body>
+</html>    
+```
+Kelebihan dari internal CSS adalah kita tidak memerlukan file yang banyak dan juga kita dapat menggunakan class dan id selector di dalam file tersebut.
+    
+Kekurangan dari internal CSS adalah tidak efisien saat kita ingin menggunakan CSS yang sama dalam beberapa file.
+
+- External CSS: kode CSS yang ditulis terpisah dengan kode HTML Eksternal CSS ditulis di sebuah file khusus yang berekstensi .css. 
+Contoh file .css:
+```
+.xleftcol {
+   float: left;
+   width: 33%;
+   background:#809900;
+}
+.xmiddlecol {
+   float: left;
+   width: 34%;
+   background:#eff2df;
+}
+```
+Kode tersebut kemudian di letakan di bagian <head> file HTML. 
+Kelebihan dari external CSS adalah proses pembuatan halaman yang lebih cepat dan efisien dikarenakan kita hanya perlu membuat satu file .css yang dapat digunakan berkali-kali. Selain itu, apabila kita ingin melakukan perubahan pada seluruh halaman website maka kita hanya perlu mengubah satu fil .css tersebut saja.
+
+Kekurangan dari external CSS adalah apabila proses loading file .css tersebut lama maka website tidak akan ter-render dengan benar. 
+
+2. Jelaskan tag HTML5 yang kamu ketahui
+<a> : tag yang digunakan saat ingin membuat elemen hyperlink. 
+<b> : tag yang digunakana saat ingin membuat elemen text dengan style bold.
+<br>
 
 # Tugas 4 PBP
 Link app: 
