@@ -167,10 +167,32 @@ PBP E
         Pseudo element CSS dapat digunakan untuk menata bagian tertentu dari suatu elemen. Misalnya, dapat digunakan untuk: Style huruf pertama, atau baris, dari suatu elemen. Contoh selector pseudo elemen dapat berupa ::before, ::after, ::marker, ::placeholder, dll.
 
 4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas
+Pertama, saya menambahkan potongan kode berikut ke base.html agar dapat menggunakan tailwind untuk styling elemen HTML. 
+```
+    ...
+    ...
+    <script src="https://cdn.tailwindcss.com"></script>
+    ...
+    ...
+```
     
+Kemudian, saya menghias semua halaman HTML yang ada pada folder Templates. Untuk membuat cards pada to do list, saya menambahkan potongan kode berikut.
+```
+   <div class = "grid gap-4 sm:grid-cols-5">
+       
+    {% for task in list_task %}
+                    <div class = "bg-gradient-to-l from-rose-300 to-yellow-300 w-32 h-28 inline-block align-middle rounded-lg flex justify-center drop-shadow-2xl">
+                        <div class = "align-middle">
+                        <div class = "font-bold mt-4 text-lg underline underline-offset-1 decoration-pink-600">{{task.task_title}}</div>
+                        <div>{{task.task_description}}</div>
+                        <div class = "mt-2 text-xs">{{task.task_date}}</div>
+                    </div>
+                    </div>
+                {% endfor %}
+   <div>
+```
 
-
-
+Potongan kode berikut akan membuat sebuah card yang akan berisikan judul, deskripsi, dan tanggal dari task tersebut dan akan membuat kolom sebanyak 5 dengan gap 4. Baris tidak dispesifikasikan karena kita ingin membuat cards tersebut terus melanjut ke bawah halaman apabila task dari user banyak. Kemudian, saya menerapkan kode responsive kepada semua elemen sesuai dengan dokumentasi tailwind CSS. Terakhir, saya melakukan git add, commit, dan push. 
 # Tugas 4 PBP
 Link app: 
 https://tugas2pbp-joan.herokuapp.com/todolist/
