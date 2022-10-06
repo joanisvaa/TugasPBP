@@ -6,40 +6,54 @@
 
 {% block content %}
 
-<div class = "login">
-
-    <h1>Login</h1>
+<div class = "bg-gradient-to-tr from-pink-700 to-pink-400 h-screen flex justify-center"> 
+    
+    <div>
+    <h1 class = "text-white text-5xl text-center mt-32 mb-5 font-sans font-bold">Login</h1>
 
     <form method="POST" action="">
         {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
-                    
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
+        <div class = "mt-10 py-10 bg-white rounded-lg text-center w-96 flex justify-center drop-shadow-2xl">
+            <div>
 
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
-    </form>
+                    <label class="block">
+                    <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700 text-left w-64">Username</span>
+                    <div><input type="username" required class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                        focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                        invalid:border-pink-500 invalid:text-pink-600
+                        focus:invalid:border-pink-500 focus:invalid:ring-pink-500 mb-4" class = "form-control"
+                        name="username"></div>
+                        
+                    <label class="block">
+                        <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700 text-left w-64">Password</span>
+                        <div><input type="password" required class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                            focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                            invalid:border-pink-500 invalid:text-pink-600
+                            focus:invalid:border-pink-500 focus:invalid:ring-pink-500" class = "form-control"
+                            name="password" ></div>
 
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}     
-        
-    Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a>
+                <div class = "text-left text-xs text-red-600 mt-2">
+                    {% if messages %}
+                    <ul>
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                    {% endif %}  
+                </div>
 
+                <div class = "flex justify-center">
+                    <div class = "mt-6 w-36 py-2 text-white text-center rounded-lg transition ease-in-out delay-150 bg-pink-600 hover:-translate-y-1 hover:scale-110 hover:bg-pink-700 duration-300"><input class="btn login_btn" type="submit" value="Login">
+                    </div>
+                </div>
+
+                <div class = "flex justify-center">
+                    <a class=" mt-4 underline underline-offset-1  text-pink-400 hover:text-pink-300" href="{% url 'todolist:register' %}">Buat Akun</a>
+                </div>
+            </div>
+        </div>
+    </form>   
+    </div>
 </div>
 
 {% endblock content %}

@@ -6,22 +6,40 @@
 
 {% block content %}  
 
-<div class = "create_task"></div>
+<div class = "create_task register bg-gradient-to-tr from-pink-700 to-pink-400 h-screen flex justify-center">
 
-    <h1>Buat Task</h1>  
+    <div class = "flex justify-center">
 
-    <form method="POST" >  
-        {% csrf_token %}  
-        <table>  
-            {{ form.as_table }}  
-            <tr>  
-                <td></td>
-                <td><input type="submit" name="submit" value="Buat Task"/></td>  
-            </tr>  
-        </table>  
-    </form>
+        <div>
+        <h1 class = "text-white text-5xl text-center mt-32 mb-5 font-sans font-bold">Buat Task</h1>  
 
-    {% if messages %}
+        <form method="POST" >  
+            {% csrf_token %}  
+            <div class = "mt-10 py-10 bg-white rounded-lg text-center w-96 h-72 drop-shadow-2xl ml-4 mr-4">
+            <div class = "flex justify-center">  
+                <label class="block">
+                    <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700 text-left w-40 ml-4 mr-4">{{ form.task_title.label }}</span>
+                    <div><input type = text required class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                        focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                        invalid:border-pink-500 invalid:text-pink-600
+                        focus:invalid:border-pink-500 focus:invalid:ring-pink-500 mb-4 w-64 ml-4 mr-4" class = "form-control"
+                        name="task_title"></div>
+
+                        <label class="block">
+                            <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700 text-left w-40 ml-4 mr-4">{{ form.task_description.label }}</span>
+                            <div><input type=text required class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                                focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                                invalid:border-pink-500 invalid:text-pink-600
+                                focus:invalid:border-pink-500 focus:invalid:ring-pink-500 mb-4 w-64 ml-4 mr-4" class = "form-control"
+                                name="task_description"></div>
+            </div>
+            <div class = "flex justify-center">  
+                <div class = "mt-4 w-36 py-2 text-white text-center rounded-lg transition ease-in-out delay-150 bg-pink-600 hover:-translate-y-1 hover:scale-110 hover:bg-pink-700 duration-300"><input class="submit" type="submit" value="Buat Task"/>
+            </div>
+            </div>  
+        </form>
+
+        {% if messages %}
         <ul>
             {% for message in messages %}
                 <li>{{ message }}</li>
@@ -29,6 +47,12 @@
         </ul>
     {% endif %}    
 
+
+</div>
 </div>  
+</div>
+</div>
+</div>  
+</div>
 
 {% endblock content %}
