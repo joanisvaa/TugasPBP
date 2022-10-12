@@ -1,6 +1,75 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $.get("/todolist/json", function(data) {
+            for (i = 0; i<data.length; i++){
+                $('#tasks').append(
+                    `<div class = "bg-gradient-to-l from-rose-300 to-yellow-300 w-32 h-32 inline-block align-middle rounded-lg flex justify-center drop-shadow-2xl">
+                        <div class = "align-middle">
+                        <div class = "font-bold mt-4 text-lg underline underline-offset-1 decoration-pink-600">${data[i].fields.task_title}</div>
+                        <div>${data[i].fields.task_description}</div>
+                        <div class = "mt-2 text-xs">${data[i].fields.task_date}</div>
+                    </div>
+                    </div>`
+                    );
+            }}
+        );
+
+        $('#button_modal').click(function(){
+            console.log("masuk modal button");
+        $.post("/todolist/add/", {task_title: $('#new_task_title').val(), task_desc: $('#new_task_desc').val()} ,function(data) {
+            $('#tasks').append(
+                    `<div class = "bg-gradient-to-l from-rose-300 to-yellow-300 w-32 h-28 inline-block align-middle rounded-lg flex justify-center drop-shadow-2xl">
+                        <div class = "align-middle">
+                        <div class = "font-bold mt-4 text-lg underline underline-offset-1 decoration-pink-600">${data.title}</div>
+                        <div>${data.description}</div>
+                        <div class = "mt-2 text-xs">${data.date}</div>
+                    </div>
+                    </div>`
+                    );
+        });
+        });
+    });
+    </script>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Buat Task Baru</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class = "flex justify-center">  
+                <label class="block">
+                    <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700 text-left w-40 ml-4 mr-4">Task Title</span>
+                    <div><input id = new_task_title type=text required class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                        focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                        invalid:border-pink-500 invalid:text-pink-600
+                        focus:invalid:border-pink-500 focus:invalid:ring-pink-500 mb-4 w-64 ml-4 mr-4" class = "form-control"
+                        name="task_title"></div>
+
+                        <label class="block">
+                            <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700 text-left w-40 ml-4 mr-4">Task Description</span>
+                            <div><input id = new_task_desc type=text required class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                                focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                                invalid:border-pink-500 invalid:text-pink-600
+                                focus:invalid:border-pink-500 focus:invalid:ring-pink-500 mb-4 w-64 ml-4 mr-4" class = "form-control"
+                                name="task_description"></div>
+                </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button id = "button_modal" type="button" class="btn btn-warning">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <div class = "bg-gradient-to-tr from-pink-700 to-pink-400 h-screen flex justify-center">
     <div>
@@ -15,19 +84,11 @@
             <div class = "flex justify-center">
             <button class = "mb-5 mt-6 w-36 ml-4 py-2 text-pink-600 text-center rounded-lg bg-yellow-400 font-sans transition ease-in-out delay-150 bg-yellow-400 hover:-translate-y-1 hover:scale-110 hover:bg-yellow-200 duration-300"><a href="{% url 'todolist:logout' %}">Logout</a>
             </button>
+            <button type="button" class="mb-5 mt-6 w-36 ml-4 py-2 text-pink-600 text-center rounded-lg bg-yellow-400 font-sans transition ease-in-out delay-150 bg-yellow-400 hover:-translate-y-1 hover:scale-110 hover:bg-yellow-200 duration-300" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Tambah Task
+              </button>
             </div>
-            <div class = "grid gap-4 sm:grid-cols-5">
-
-                {% comment %} Add the data below this line {% endcomment %}
-                {% for task in list_task %}
-                    <div class = "bg-gradient-to-l from-rose-300 to-yellow-300 w-32 h-28 inline-block align-middle rounded-lg flex justify-center drop-shadow-2xl">
-                        <div class = "align-middle">
-                        <div class = "font-bold mt-4 text-lg underline underline-offset-1 decoration-pink-600">{{task.task_title}}</div>
-                        <div>{{task.task_description}}</div>
-                        <div class = "mt-2 text-xs">{{task.task_date}}</div>
-                    </div>
-                    </div>
-                {% endfor %}
+            <div id = "tasks" class = "grid gap-4 sm:grid-cols-5">
                 </div> 
 
                 <div class = "flex justify-center">
@@ -49,5 +110,5 @@
     </form>
 </div> 
     </div>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 {% endblock content %}
